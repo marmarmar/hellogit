@@ -15,7 +15,7 @@ life=5
 
 
 def start():
- global capital
+ global capital, dash_list
  print("\n \nWelcome in Hangman game!\n")
  bad_list = []
  capital = random.choice(capitals)
@@ -29,7 +29,7 @@ def start():
 
 
 def play_again():
-    global capital
+    global capital, dash_list
     c = input("Do you want to play again? (yes/no): ")
     if c == "yes":
         start()
@@ -42,7 +42,7 @@ def play_again():
 
 def letter():
     """Checks if user's letter is correct."""
-    global life
+    global life, dash_list
     global capital
     letter = input("\nPlease type your letter: ")
     letter = letter.upper()
@@ -70,7 +70,7 @@ def letter():
 
 def word():
     """Checks if user's word (capital) is correct."""
-    global life, capital
+    global life, capital, dash_list
     word = input("\nPlease type in the word: ")
     word = word.upper()
     if word == capital:
@@ -85,7 +85,7 @@ def word():
 
 def main():
     """Checks if user wants to type letter or word"""
-    global capital
+    global capital, dash_list
     if life == 0:
         print("\n\nYou are hanging!\n\n")
         play_again()
@@ -110,7 +110,7 @@ def main():
 
 
 def game():
-    global capital
+    global capital, dash_list
     start()
     main()
 
